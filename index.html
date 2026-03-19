@@ -226,13 +226,14 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-window.addEventListener('resize', () => { resize(); initLNPs(12); });
-window.addEventListener('load', () => {
-    resize();
-    console.log('Canvas size:', W, H);
-    initLNPs(12);
-    draw();
-});
+if (window.innerWidth > 768) {
+    window.addEventListener('resize', () => { resize(); initLNPs(12); });
+    window.addEventListener('load', () => {
+        resize();
+        initLNPs(12);
+        draw();
+    });
+}
 </script>
 
 
